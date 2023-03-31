@@ -1,0 +1,10 @@
+TARGET = tetris
+CC = gcc
+CFLAGS = -Wall -g -lGL -lGLU -lglut
+
+$(TARGET): main.o
+	$(CC) -o $@ $^ $(CFLAGS)
+
+main.o: main.c game.c game.h
+	$(CC) -c $^ $(CFLAGS)
+
